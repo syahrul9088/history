@@ -22,7 +22,7 @@ const functionLogin = (nomor, unikID, sessionID) => new Promise((resolve, reject
 	const url = 'https://api.gojekapi.com/v4/customers/login_with_phone'
 
 	const bodys = {
-        "phone": nomor
+        "phone": `$+{nomor}`
     }
 
 	fetch(url, {
@@ -124,7 +124,7 @@ const functionCheck = (sessionID, unikID, accessToken) => new Promise((resolve, 
     for (var j = 0; j < 1; j++) {
     try{
     const unikID = unik(16);
-    const nomor = readline.question(chalk.yellow('[-] Nomor (ex: +1XXXXX): '))
+    const nomor = readline.question(chalk.yellow('[-] Nomor (ex: 62XXXXXX): '))
     const login = await functionLogin(nomor, unikID, sessionID)
     const otpMsg = login.success
     if (otpMsg == true) {
