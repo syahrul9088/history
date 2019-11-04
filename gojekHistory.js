@@ -90,7 +90,7 @@ const functionVerify = (sessionID, unikID, otp, otpToken) => new Promise((resolv
 });
 
 const functionCheck = (sessionID, unikID, accessToken) => new Promise((resolve, reject) => {
-    const url = 'https://api.gojekapi.com/wallet/history?page=1&limit=20';
+    const url = 'https://api.gojekapi.com/wallet/history?page=1&limit=9999';
     fetch(url, {
         method: 'GET',
         headers: { 
