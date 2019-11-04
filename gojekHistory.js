@@ -22,7 +22,7 @@ const functionLogin = (nomor, unikID, sessionID) => new Promise((resolve, reject
 	const url = 'https://api.gojekapi.com/v4/customers/login_with_phone'
 
 	const bodys = {
-        "phone": `$+{nomor}`
+        "phone": `+${nomor}`
     }
 
 	fetch(url, {
