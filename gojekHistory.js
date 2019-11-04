@@ -151,7 +151,7 @@ const functionCheck = (sessionID, unikID, accessToken) => new Promise((resolve, 
         break
     }
     await delay (3000)
-    const status = chalk.green(`=> Status: ${data.status}\n=> Jumlah Transaksi: ${data.amount}\n=> Waktu Transaksi: ${data.transacted_at}\n=> Transaksi Reff: ${data.transaction_ref}\n=> Deskripsi: ${data.description}\n`)
+    const status = chalk.green(`=> Status: ${data.status}\n=> Nominal Transaksi: ${data.amount}\n=> Waktu Transaksi: ${data.transacted_at}\n=> Transaksi Reff: ${data.transaction_ref}\n=> Deskripsi: ${data.description}\n`)
     console.log(status)
 }
     }catch(e){
