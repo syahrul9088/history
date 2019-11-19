@@ -128,12 +128,14 @@ const functionRegist = (sessionID, code, email, username, nomor) => new Promise(
             console.log('[+] Berhasil diverifikasi!')
         } else {
             console.log('[!] Gagal diverifikasi!')
+            console.log(verif)
         }
         const regist = await functionRegist(sessionID, code, email, username, nomor)
         if (regist.code == 0000) {
-            console.log('[+] Regist berhasil!')
+            console.log('[+] Regist berhasil!\n')
         } else {
             console.log('[!] Regist gagal!')
+            console.log(`${regist}\n`)
         }
       } catch (e) {
           console.log(e)
