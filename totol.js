@@ -108,12 +108,13 @@ const functionRegist = (sessionID, code, email, username, nomor) => new Promise(
   });
 
 (async () => {
+    const code = readlineSync.question('[?] Code reff: ')
+    for (var i = 0; i < 100; i++) {
       try {
         const uname = await functionName()
         const number = Math.floor(Math.random() * 10000) + 100;
         const username = `${uname.name}${number}`
         const email = `${uname.name}${number}`
-        const code = readlineSync.question('[?] Code reff: ')
         const nomor = readlineSync.question('[?] Nomor HP: ')
         const send = await functionSendOtp(nomor)
         if (send.code == 0000) {
@@ -137,4 +138,5 @@ const functionRegist = (sessionID, code, email, username, nomor) => new Promise(
       } catch (e) {
           console.log(e)
       }
+    }
   })()
